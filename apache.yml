@@ -17,4 +17,5 @@
         dest: /var/www/html/
       with_items:
         - index.html
+        - forestbridge.jpg
 ...
