@@ -1,5 +1,5 @@
 ---
-- hosts: linux 
+- hosts: test_ansible 
   become: True
   tasks:
     - name: Install packages
