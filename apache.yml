@@ -13,6 +13,8 @@
         enabled: True
     - name: Deploy static website
       copy:
-        src: index.html
+        src: "{{item}}"
         dest: /var/www/html/
+      with_items:
+        - index.html
 ...
