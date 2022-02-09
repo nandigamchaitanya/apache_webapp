@@ -1,6 +1,5 @@
 ---
-- hosts: linux
-  become_user: root
+- hosts: linux 
   become: True
   tasks:
     - name: Install packages
