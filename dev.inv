@@ -1,0 +1,1 @@
+linux ansible_host=10.128.0.29 ansible_connection=ssh ansible_user=chaitanya_nandigam ansible_ssh_pass=linux
