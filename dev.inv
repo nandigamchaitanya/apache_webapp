@@ -1,1 +1,1 @@
-test_ansible ansible_host=10.128.0.30 ansible_connection=ssh ansible_user=chaitanya_nandigam
+test_ansible ansible_host=35.223.62.157 ansible_connection=ssh ansible_user=chaitanya_nandigam
