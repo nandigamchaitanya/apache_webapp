@@ -1,1 +1,1 @@
-linux_new ansible_host=10.128.0.33 ansible_connection=ssh ansible_user=chaitanya_nandigam
+linux_new ansible_host=10.128.0.37 ansible_connection=ssh ansible_user=chaitanya_nandigam
