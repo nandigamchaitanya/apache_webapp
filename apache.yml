@@ -1,5 +1,5 @@
 ---
-- hosts: linux_new 
+- hosts: localhost 
   become: True
   tasks:
     - name: Install packages
