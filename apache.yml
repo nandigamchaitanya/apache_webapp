@@ -31,7 +31,7 @@
       with_items:
         - { src: 'website1.com/public_html/index.html', dest: '/var/www/website1.com/public_html/'} 
         - { src: 'website2.com/public_html/index.html', dest: '/var/www/website2.com/public_html/'}
-        - { src: 'website3.com/public_html/index.html', dest: '/var/www/website2.com/public_html/'}
+        - { src: 'website3.com/public_html/index.html', dest: '/var/www/website3.com/public_html/'}
     
     - name: Copy apache configuration files to conf.d
       copy:
