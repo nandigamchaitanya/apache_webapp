@@ -35,10 +35,10 @@
     
     - name: Copy apache configuration files to conf.d
       copy:
-        src: "{{item}}"
-        dest: /etc/httpd/conf.d/
+        src: "{{item.src}}"
+        dest: "{{item.dest}}"
         with_items:
-          - confd/website1.com.conf
-          - confd/website2.com.conf
-          - confd/website3.com.conf
+          - {src: 'confd/website1.com.conf', dest: '/etc/httpd/conf.d/'}
+          - {src: 'confd/website2.com.conf', dest: '/etc/httpd/conf.d/'}          
+          - {src: 'confd/website3.com.conf', dest: '/etc/httpd/conf.d/'}          
 ...
