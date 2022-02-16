@@ -32,6 +32,7 @@
         - { src: 'website1.com/public_html/index.html', dest: '/var/www/website1.com/public_html/'} 
         - { src: 'website2.com/public_html/index.html', dest: '/var/www/website2.com/public_html/'}
         - { src: 'website3.com/public_html/index.html', dest: '/var/www/website3.com/public_html/'}
+      notify: restart_service
     
     - name: Copy apache configuration files to conf.d
       copy:
@@ -40,5 +41,11 @@
       with_items:
           - {src: 'confd/website1.com.conf', dest: '/etc/httpd/conf.d/'}
           - {src: 'confd/website2.com.conf', dest: '/etc/httpd/conf.d/'}          
-          - {src: 'confd/website3.com.conf', dest: '/etc/httpd/conf.d/'}          
+          - {src: 'confd/website3.com.conf', dest: '/etc/httpd/conf.d/'}
+    
+  handlers:
+      - name: restart_service
+        service:
+           name: "httpd"
+           state: restarted
 ...
