@@ -1,21 +1,35 @@
 ---
-- hosts: linux_new 
+- hosts: localhost
   become: True
   tasks:
     - name: Install packages
       yum:
         name: "httpd"
         state: "present"
+
     - name: Start Apache server
       service:
         name: httpd
         state: started
         enabled: True
+
+    - name: Creates website under /var/www directory
+      file:
+        path: "{{ item }}"
+        state: directory
+        owner: apache
+        group: apache
+      with_items:
+      - /var/www/website1.com
+      - /var/www/website2.com
+      - /var/www/website3.com
+    
     - name: Deploy static website
       copy:
         src: "{{item}}"
-        dest: /var/www/html/
+        dest: /etc/httpd/conf.d/
       with_items:
-        - index.html
-        - forestbridge.jpg
+        - confd/website1.com.conf
+        - confd/website2.com.conf
+        - confd/website2.com.conf
 ...
