@@ -20,9 +20,9 @@
         owner: apache
         group: apache
       with_items:
-      - /var/www/website1.com/public_html/
-      - /var/www/website2.com/public_html/
-      - /var/www/website3.com/public_html/
+        - /var/www/website1.com/public_html/
+        - /var/www/website2.com/public_html/
+        - /var/www/website3.com/public_html/
     
     - name: Copy website files to /var/www/website/public_html/
       copy:
@@ -35,6 +35,10 @@
     
     - name: Copy apache configuration files to conf.d
       copy:
-        src: confd/*
+        src: "{{item}}"
         dest: /etc/httpd/conf.d/
+        with_items:
+          - confd/website1.com.conf
+          - confd/website2.com.conf
+          - confd/website3.com.conf
 ...
