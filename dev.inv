@@ -1,1 +1,1 @@
-linux_new ansible_host=35.238.68.191 ansible_connection=ssh ansible_user=chaitanya_nandigam
+linux_new ansible_host=10.0.0.2 ansible_connection=ssh ansible_user=chaitanya_nandigam
